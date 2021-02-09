@@ -69,8 +69,8 @@ func Write(writer ingestor.DBInserter, elector *util.Elector, metrics *Metrics) 
 		metrics.ReceivedSamples.Add(float64(receivedBatchCount))
 		begin := time.Now()
 
-		// if samples in write request are empty the we do not need to
-		// proceed further
+		// If samples in write request are empty, then we do not need to
+		// proceed further.
 		if len(req.GetTimeseries()) == 0 {
 			return
 		}
